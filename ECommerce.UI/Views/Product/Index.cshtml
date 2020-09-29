@@ -1,0 +1,69 @@
+﻿@model ECommerce.UI.Models.ViewModels.ProductIndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (TempData["DeleteStatus"]?.ToString() == "Success")
+{
+    <div class="alert alert-success">@TempData["Message"].ToString()</div>
+
+}
+else if (TempData["DeleteStatus"]?.ToString() == "Not Found")
+{
+    <div class="alert alert-danger">@TempData["Message"].ToString()</div>
+}
+
+else if (TempData["DeleteStatus"]?.ToString() == "Failed")
+{
+    <div class="alert alert-danger">@TempData["Message"].ToString()</div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            @foreach (var item in Model.Categories)
+            {
+                <div class="row">
+                    @Html.ActionLink(item.Name, "Product", "GetByCategory", null, new { @class = "btn btn-info" })
+                    <br />
+                </div>
+
+            }
+            <br />
+            <div class="row">
+                <a href="/Product/Create" class="btn btn-success">Add Product</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+
+            <div class="row">
+                <div class="col-md-3"><strong>Id</strong></div>
+                <div class="col-md-3"> <strong>Name Of Product</strong></div>
+                <div class="col-md-3"><strong>Brand</strong></div>
+                <div class="col-md-3"><strong>Price</strong></div>
+            </div>
+
+
+            @foreach (var item in Model.Products)
+            {
+                <div class="row">
+                    <div class="col-md-3">@item.Id</div>
+                    <div class="col-md-3">@item.Name</div>
+                    <div class="col-md-3">@item.Brand</div>
+                    <div class="col-md-1">@item.UnitPrice</div>
+
+                    <div class="col-md-2">
+                        @Html.ActionLink("Delete", "Delete", "Product", new { productId = item.Id }, new { @class = "btn btn-danger btn-sm" })
+
+                        @Html.ActionLink("Update", "Update", "Product", new { productId = item.Id }, new { @class = "btn btn-warning btn-sm" })
+
+                    </div>
+
+                </div>
+            }
+           
+        </div>
+    </div>
+</div>
