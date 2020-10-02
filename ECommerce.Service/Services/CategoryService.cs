@@ -17,7 +17,7 @@ namespace ECommerce.Service.Services
 
         public List<CategoryResponse> GetCategories()
         {
-            var categories = _context.Category.Select(x => new CategoryResponse
+             var categories =  _context.Category.ToList().Select(x => new CategoryResponse
             {
                 Id = x.Id,
                 Name = x.Name

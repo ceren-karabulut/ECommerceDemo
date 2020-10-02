@@ -13,7 +13,7 @@ namespace ECommerce.Data.Context
 
         }
 
-      public DbSet<Product> Product { get; set; }
-      public DbSet<Category> Category { get; set; }
+      public virtual DbSet<Product> Product { get; set; }
+      public virtual DbSet<Category> Category { get; set; }
     }
 }

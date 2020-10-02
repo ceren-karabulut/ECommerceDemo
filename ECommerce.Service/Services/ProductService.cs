@@ -21,7 +21,7 @@ namespace ECommerce.Service.Services
 
         public List<ProductResponse> GetAll()
         {
-            var products = _context.Product.Select(x => new ProductResponse()
+            var products = _context.Product.ToList().Select(x => new ProductResponse()
             {
 
                 Id = x.Id,
@@ -105,16 +105,14 @@ namespace ECommerce.Service.Services
             _context.Product.Update(productEntity);
             return _context.SaveChanges();
 
-            //return new ProductResponse
-            //{
-            //    Id = productEntity.Id,
-            //    Brand = productEntity.Brand,
-            //    UnitPrice = productEntity.UnitPrice,
-            //    StockCount = productEntity.StockCount,
-            //    Name = productEntity.Name
-            //};
+            
         }
-
+        
+        /// <summary>
+        /// will refactor
+        /// </summary>
+        /// <param name="CreateProduct"></param>
+        /// <returns></returns>
         public int Create(ProductCreateRequest request)
         {
             Product product = new Product
@@ -123,7 +121,8 @@ namespace ECommerce.Service.Services
                 Name = request.Name,
                 Brand = request.Brand,
                 StockCount = request.StockCount,
-                UnitPrice = request.UnitPrice
+                UnitPrice = request.UnitPrice,
+                CategoryId = request.CategoryId
             };
 
             _context.Product.Add(product);
