@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RKKE8FBzpjPWv3DP6hDFtfdAV1BKefXQc6L2Y5zSXtzJ23mBXlqZzbT1Z095CApKYMlI2rGfTAZJ+vy/VrQ9og==",
+  "dgSpecHash": "hI/3pTdfp0y1Z8feckN7dot1MXRIwKlzADAVYoTlCtcU9mnNjEMWhp1tyKLirBtYQCUb7dvMjqG9kZa+jZxaEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hotta\\source\\repos\\ECommerceDemo\\ECommerceDemo\\ECommerceDemo.csproj",
+  "projectFilePath": "C:\\Users\\hotta\\source\\repos\\ECommerceDemo\\ECommerceDemo\\ECommerceApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hotta\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\hotta\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
